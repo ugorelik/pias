@@ -14,7 +14,7 @@ class TinySong
     song = ARGV.join "+"
 
     params= {:query => {:format => "json", :key => API_KEY}}
-    response=self.class.get("https://tinysong.com/a/#{song}", params)
+    response=self.class.get("http://tinysong.com/a/#{song}", params)
     url=response.parsed_response.delete("\\")
 
     if url =~ /tinysong\.com/
